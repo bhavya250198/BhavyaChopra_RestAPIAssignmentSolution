@@ -20,12 +20,6 @@ import com.greatLearning.employees.service.UserService;
 public class UserController {
 	@Autowired
 	UserService service;
-	@Autowired 
-	RolesService roleservice;
-	@RequestMapping("/getUserList")
-	public List<Users> getUsers(){
-		return service.getAllUsers();
-	}
 	
 	@PostMapping("/addUser")
 	public String saveUser(@RequestBody Users user) {

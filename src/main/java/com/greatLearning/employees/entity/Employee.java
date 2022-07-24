@@ -10,26 +10,18 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
-
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Roles {
-	
+public class Employee {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int roleId;
-	private String roleName;
-	public Roles(String roleName) {
-		super();
-		this.roleName = roleName;
-	}
-	//constructor
-	
-	
+	private int empId;
+	private String empFirstName;
+	private String empLastName;
+	private String email;
 	
 
 }

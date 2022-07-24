@@ -1,5 +1,6 @@
 package com.greatLearning.employees.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -12,7 +13,16 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+
 public class Users {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,41 +36,15 @@ public class Users {
 	           inverseJoinColumns = @JoinColumn(name = "roleId")
 	           )
 
-	private List<Roles> roles;
-	
-	
-	public Users() {
-		
-	}
+	private List<Roles> roles =new ArrayList<Roles>();
 	public Users(String userName, String password, List<Roles> roles) {
+		super();
 		this.userName = userName;
 		this.password = password;
 		this.roles = roles;
 	}
-	public int getUserId() {
-		return userId;
-	}
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
-	public String getUserName() {
-		return userName;
-	}
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public List<Roles> getRoles() {
-		return roles;
-	}
-	public void setRoles(List<Roles> roles) {
-		this.roles = roles;
-	}
+	 
+	
 	
 
 }
