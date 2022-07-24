@@ -13,7 +13,7 @@ import com.greatLearning.employees.entity.Employee;
 import com.greatLearning.employees.service.EmployeeService;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/employee")
 public class EmployeeController {
 	@Autowired
 	EmployeeService employeeService;
